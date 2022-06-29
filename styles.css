@@ -10,43 +10,88 @@
 
 * {
     font-family: "Kumbh Sans", sans-serif;
-    font-size: 12px;
-    border-radius: 2em;
+    font-size: 14px;
 }
 
 body {
     height: 98.3vh;
     background: linear-gradient(to bottom, var(--softViolet), var(--softBlue));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .mainContent {
     margin: auto;
-    padding: 2em;
-    width: 60%;
-    background: url(images/bg-pattern-desktop.svg) white;
+    width: 65%;
+    background: white;
     display: flex;
     justify-content: center;
+    border-radius: 2em;
     align-items: center;
-    box-shadow: 0 0 20px 0;
+    box-shadow: 0px 30px 40px var(--veryDarkGrayishBlue);
 }
 
 .illustration {
+    background-image: url(images/illustration-woman-online-desktop.svg), url(images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-position: -6em, -28.5em;
+    background-size: auto, 200% 150%;
     width: 50%;
-    display: flex;
-}
-
-.woman {
-    width: 50%;
+    height: 100%;
     position: relative;
 }
 
-.box {
+.littleBox {
     position: absolute;
-    left: -93px;
-    bottom: 3em;
+    bottom: 28%;
+    left: -6.6em;
+}
+
+.box {
+    padding: 0 1em 1em 0;
+    border-radius: 0;
+    border-bottom: 1px solid var(--lightGrayishBlue);
 }
 
 .faq {
     width: 50%;
-    padding: 2em;
+    background-color: transparent;
+    padding: 4em;
+    padding-right: 6em;
+}
+
+.title {
+    margin: 0.5em 0;
+    font-size: 38px;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.answer {
+    display: none;
+    align-self: flex-start;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        height: fit-content;
+    }
+
+    .mainContent {
+        margin: 4em;
+        width: 85%;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 2em;
+        align-items: center;
+        box-shadow: 0px 30px 40px var(--veryDarkGrayishBlue);
+    }
 }
