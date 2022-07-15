@@ -61,7 +61,7 @@ picture {
     height: auto;
     z-index: 1;
     position: absolute;
-    bottom: 13em;
+    bottom: 14.5em;
     left: -6.7em;
 }
 
@@ -165,7 +165,7 @@ summary:hover {
 
     .littleBox {
         width: 160px;
-        bottom: 14.5em;
+        bottom: 15.5em;
         left: -0.7em;
     }
 }
@@ -234,13 +234,15 @@ summary:hover {
     main {
         padding-top: 2em;
     }
+
     .mainContent {
         background-size: 270px;
     }
 
-.illustration {
-    margin-top: -128px;
-}
+    .illustration {
+        margin-top: -128px;
+    }
+
     .illustration img {
         width: 95%;
         height: 100%;
