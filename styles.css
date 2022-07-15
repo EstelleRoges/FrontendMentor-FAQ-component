@@ -14,52 +14,64 @@
 }
 
 body {
-    height: 98.3vh;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100vh;
     background: linear-gradient(to bottom, var(--softViolet), var(--softBlue));
+}
+
+main {
+    position: relative;
+    margin: auto;
+    padding-top: 12em;
+    max-width: 960px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .mainContent {
-    margin: auto;
-    width: 65%;
-    background: white;
+    margin: 0;
+    width: 100%;
+    height: 60vh;
+    background-color: white;
+    background-image: url(images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: -40em 70%;
     display: flex;
     justify-content: center;
     border-radius: 2em;
     align-items: center;
     box-shadow: 0px 30px 40px var(--veryDarkGrayishBlue);
+    overflow: hidden;
 }
 
 .illustration {
-    background-image: url(images/illustration-woman-online-desktop.svg), url(images/bg-pattern-desktop.svg);
-    background-repeat: no-repeat;
-    background-clip: border-box;
-    background-position: -6em, -28.5em;
-    background-size: auto, 200% 150%;
     width: 50%;
-    height: 100%;
-    position: relative;
+}
+
+.illustration img {
+    margin-left: -5em;
 }
 
 .littleBox {
+    z-index: 1;
     position: absolute;
-    bottom: 28%;
-    left: -6.6em;
-}
-
-.box {
-    padding: 0 1em 1em 0;
-    border-radius: 0;
-    border-bottom: 1px solid var(--lightGrayishBlue);
+    bottom: 12em;
+    left: -6.7em;
 }
 
 .faq {
+    margin: auto;
     width: 50%;
-    background-color: transparent;
+    height: 50vh;
     padding: 4em;
-    padding-right: 6em;
+    padding-right: 5em;
+    overflow-x: hidden;
+}
+
+.faq::-webkit-scrollbar {
+    display: none;
 }
 
 .title {
@@ -67,31 +79,143 @@ body {
     font-size: 38px;
 }
 
-.question {
+details {
+    transition: height 0.3s;
+    /* overflow: hidden; */
+    border-bottom: 1px solid var(--lightGrayishBlue);
+}
+
+details[open] {
+    height: 130px;
+}
+
+details[open] svg {
+    animation: rotate 0.2s ease-out;
+    transform: rotate(180deg);
+}
+
+details[open] .answer {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+details:not([open]) {
+    height: 60px;
+}
+
+details:not([open]) .answer {
+    animation: fadeOut 0.5s 0s ease-in-out;
+}
+
+details svg {
+    transition: 0.2s ease-out;
+}
+
+summary {
+    margin: 0;
+    padding: 0.5em 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
+    list-style: none;
+    transition: 0.2s ease-in-out;
+}
+
+details[open] summary {
+    font-weight: 700;
+}
+
+
+summary:hover {
+    color: var(--softRed);
+    transition: 0.2s ease-in-out;
 }
 
 .answer {
-    display: none;
-    align-self: flex-start;
+    margin: 0 0 1em 0;
+    line-height: 20px;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+    .mainContent {
+        width: 85%;
+        border-radius: 2em;
+    }
+
+    .littleBox {
+        bottom: 8em;
+        left: -1.5em;
+    }
 }
 
 @media screen and (max-width: 768px) {
-    body {
-        height: fit-content;
-    }
-
     .mainContent {
-        margin: 4em;
+        background-image: url(images/bg-pattern-mobile.svg);
+        background-repeat: no-repeat;
+        background-size: 72vw;
+        background-position: 6.5em -0.5em;
+        margin-top: 7em;
         width: 85%;
-        background: white;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        border-radius: 2em;
         align-items: center;
-        box-shadow: 0px 30px 40px var(--veryDarkGrayishBlue);
+    }
+
+    .illustration {
+        z-index: 2;
+        margin-top: -15em;
+    }
+
+    .illustration img {
+        position: absolute;
+        width: 60vw;
+    }
+
+    .littleBox {
+        z-index: 3;
+        position: absolute;
+        top: 13em;
+        left: 9em;
+    }
+
+    .faq {
+        width: 80%;
+        margin-top: 20em;
+        padding: 4em 0;
+    }
+
+    details[open] {
+        height: 170px;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(180deg);
     }
 }
