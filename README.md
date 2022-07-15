@@ -48,8 +48,8 @@ Your users should be able to:
 ### What I learned
 
 A lot! 
-First, the <details> tag. That blew my mind. Today, everything is "made easier" because of frameworks and all but the good ol' HTML/CSS duo is still pretty powerful!
-The <picture> tag was also a cool thing to hear about!
+First, the "details" tag. That blew my mind. Today, everything is "made easier" because of frameworks and all but the good ol' HTML/CSS duo is still pretty powerful!
+The "picture" tag was also a cool thing to hear about!
 I don't think it's a surprise to say that the pictures were a pain in the neck...always moving in the wrong places! Ugh...
 well...that made me practice CSS a lot, so that's cool.
 
