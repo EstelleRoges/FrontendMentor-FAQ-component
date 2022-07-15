@@ -43,19 +43,16 @@ Your users should be able to:
 ### Built with
 
 - HTML5
-- Sass
-(- JavaScript)
+- CSS (yes, plain CSS, I wanted to practice the attributes a bit).
 
 ### What I learned
 
-Coming soon
-
-### Continued development
-
-Comming soon
+A lot! 
+First, the <details> tag. That blew my mind. Today, everything is "made easier" because of frameworks and all but the good ol' HTML/CSS duo is still pretty powerful!
+The <picture> tag was also a cool thing to hear about!
+I don't think it's a surprise to say that the pictures were a pain in the neck...but that made me practice CSS a lot, so that's cool.
 
 ## Author
 
-- Website - Coming soon!
 - Frontend Mentor - https://www.frontendmentor.io/profile/EstelleRoges
 - Github - https://github.com/EstelleRoges
