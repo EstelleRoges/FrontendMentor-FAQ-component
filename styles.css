@@ -147,8 +147,10 @@ summary:hover {
 }
 
 .attribution {
-    margin-top: 2em;
+    margin-top: 5em;
 }
+
+/* MEDIA QUERIES */
 
 @media screen and (max-width: 1200px) and (min-width: 950px) {
     .mainContent {
@@ -228,6 +230,9 @@ summary:hover {
 }
 
 @media screen and (max-width: 430px) {
+    main {
+        padding-top: 2em;
+    }
     .mainContent {
         background-size: 270px;
     }
