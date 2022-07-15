@@ -11,11 +11,11 @@
 * {
     font-family: "Kumbh Sans", sans-serif;
     font-size: 14px;
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    box-sizing: border-box;
     height: 100vh;
     background: linear-gradient(to bottom, var(--softViolet), var(--softBlue));
 }
@@ -37,7 +37,7 @@ main {
     background-color: white;
     background-image: url(images/bg-pattern-desktop.svg);
     background-repeat: no-repeat;
-    background-position: -40em 70%;
+    background-position: -40em 75%;
     display: flex;
     justify-content: center;
     border-radius: 2em;
@@ -48,45 +48,55 @@ main {
 
 .illustration {
     width: 50%;
-}
-
-.illustration img {
     margin-left: -5em;
 }
 
+picture {
+    display: flex;
+    justify-content: center;
+}
+
 .littleBox {
+    width: auto;
+    height: auto;
     z-index: 1;
     position: absolute;
-    bottom: 12em;
+    bottom: 13em;
     left: -6.7em;
 }
 
 .faq {
     margin: auto;
     width: 50%;
-    height: 50vh;
-    padding: 4em;
-    padding-right: 5em;
+    height: 100%;
+    padding: 4em 5em 4em 6em;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.boxes {
     overflow-x: hidden;
 }
 
-.faq::-webkit-scrollbar {
+.boxes::-webkit-scrollbar {
     display: none;
 }
 
 .title {
+    width: 100%;
     margin: 0.5em 0;
     font-size: 38px;
 }
 
 details {
+    width: 100%;
+    padding: 0.5em;
     transition: height 0.3s;
-    /* overflow: hidden; */
+    overflow: hidden;
     border-bottom: 1px solid var(--lightGrayishBlue);
-}
-
-details[open] {
-    height: 130px;
 }
 
 details[open] svg {
@@ -98,12 +108,12 @@ details[open] .answer {
     animation: fadeIn 0.5s ease-in-out;
 }
 
-details:not([open]) {
-    height: 60px;
+details:not([open]) .answer {
+    animation: fadeOut 0.5s ease-in-out;
 }
 
-details:not([open]) .answer {
-    animation: fadeOut 0.5s 0s ease-in-out;
+details p {
+    margin: 0;
 }
 
 details svg {
@@ -136,57 +146,98 @@ summary:hover {
     line-height: 20px;
 }
 
-@media screen and (min-width: 769px) and (max-width: 1200px) {
-    .mainContent {
-        width: 85%;
-        border-radius: 2em;
-    }
-
-    .littleBox {
-        bottom: 8em;
-        left: -1.5em;
-    }
+.attribution {
+    margin-top: 2em;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) and (min-width: 950px) {
     .mainContent {
-        background-image: url(images/bg-pattern-mobile.svg);
-        background-repeat: no-repeat;
-        background-size: 72vw;
-        background-position: 6.5em -0.5em;
-        margin-top: 7em;
         width: 85%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        background-position: -41em 70%;
     }
 
     .illustration {
-        z-index: 2;
-        margin-top: -15em;
-    }
-
-    .illustration img {
-        position: absolute;
-        width: 60vw;
+        margin-left: -3.5em;
     }
 
     .littleBox {
-        z-index: 3;
-        position: absolute;
-        top: 13em;
-        left: 9em;
+        width: 160px;
+        bottom: 14.5em;
+        left: -0.7em;
+    }
+}
+
+@media screen and (max-width: 949px) {
+    main {
+        padding-top: 3.5em;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .mainContent {
+        background-position: 2em -1em;
+        margin-top: 10em;
+        background-image: url(images/bg-pattern-mobile.svg);
+        background-position-x: 50%;
+        background-size: 300px;
+        width: 85%;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .illustration {
+        margin-top: -135px;
+        margin-left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .illustration * {
+        margin: 0;
+    }
+
+    .illustration img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .littleBox {
+        display: none;
     }
 
     .faq {
-        width: 80%;
-        margin-top: 20em;
-        padding: 4em 0;
+        width: 100%;
+        max-width: 550px;
+        padding: 2em;
+        padding-top: 0.5em;
     }
 
-    details[open] {
-        height: 170px;
+    .boxes {
+        width: 100%;
+        padding: 0 0.7em 3em 1em;
+    }
+
+    h1 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .mainContent {
+        background-size: 270px;
+    }
+
+.illustration {
+    margin-top: -128px;
+}
+    .illustration img {
+        width: 95%;
+        height: 100%;
     }
 }
 

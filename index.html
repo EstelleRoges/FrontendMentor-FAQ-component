@@ -20,10 +20,14 @@
     <img class="littleBox" src="images/illustration-box-desktop.svg" alt="littleBox">
     <div class="mainContent">
       <section class="illustration">
-        <img src="images/illustration-woman-online-desktop.svg" alt="">
+        <picture>
+          <source media="(min-width: 949px)" srcset="images/illustration-woman-online-desktop.svg">
+          <img src="images/illustration-woman-online-mobile.svg" alt="illustration">
+        </picture>
       </section>
       <section class="faq">
         <h1 class="title">FAQ</h1>
+        <div class="boxes">
         <div class="box">
           <details>
             <summary>
@@ -88,6 +92,7 @@
               Chat and email support is available 24/7. Phone lines are open during normal business hours.
             </p>
           </details>
+        </div>
         </div>
       </section>
     </div>
