@@ -78,6 +78,7 @@ picture {
 }
 
 .boxes {
+    width: 100%;
     overflow-x: hidden;
 }
 
