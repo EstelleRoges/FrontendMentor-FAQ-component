@@ -37,7 +37,7 @@ main {
     background-color: white;
     background-image: url(images/bg-pattern-desktop.svg);
     background-repeat: no-repeat;
-    background-position: -40em 75%;
+    background-position: -40em 70%;
     display: flex;
     justify-content: center;
     border-radius: 2em;
@@ -61,8 +61,8 @@ picture {
     height: auto;
     z-index: 1;
     position: absolute;
-    bottom: 14.5em;
-    left: -6.7em;
+    bottom: 12em;
+    left: -6.6em;
 }
 
 .faq {
@@ -165,8 +165,8 @@ summary:hover {
 
     .littleBox {
         width: 160px;
-        bottom: 15.5em;
-        left: -0.7em;
+        bottom: 13.5em;
+        left: -0.4em;
     }
 }
 
